@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql:8  # Docker image for MySQL
+    container_name: appointix-mysql  # Custom container name
+    restart: always  # Auto restart if container crashes
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # root password
+      MYSQL_DATABASE: appointix  # database auto-created
+
+    ports:
+      - "3306:3306"  # host:container
+
+    volumes:
+      - mysql_data:/var/lib/mysql  # persist data
+
+  redis:
+    image: redis:7  # Redis image
+    container_name: appointix-redis
+
+    ports:
+      - "6379:6379"  # Redis default port
+
+    volumes:
+      - redis_data:/data  # persist Redis data
+
+volumes:
+  mysql_data:
+  redis_data:
