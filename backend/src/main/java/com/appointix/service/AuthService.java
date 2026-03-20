@@ -36,13 +36,16 @@ public class AuthService {
 
     public String login(LoginRequest request) {
 
+        // STEP 1: Fetch user
         User user = userRepository.findByUsername(request.getUsername())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
+        // STEP 2: Validate password
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new RuntimeException("Invalid password");
         }
 
+        // STEP 3: Generate JWT
         return jwtUtil.generateToken(user.getUsername());
     }
 }
