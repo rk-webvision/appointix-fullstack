@@ -7,6 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/appointments")
+@CrossOrigin(origins = "*") // 🔥 ADD THIS
 public class AppointmentController {
 
     private final AppointmentService service;

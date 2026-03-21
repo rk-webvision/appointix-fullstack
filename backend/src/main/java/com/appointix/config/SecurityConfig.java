@@ -26,25 +26,9 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-            // Disable CSRF (for APIs)
             .csrf(csrf -> csrf.disable())
-
-            // Enable CORS
-            .cors(cors -> {})
-
-            // Stateless session (JWT based)
-            .sessionManagement(session -> 
-                session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            )
-
-            // Authorization rules
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers(
-                    "/health",
-                    "/api/auth/**",          // login/register
-                    "/api/appointments/**"   // allow booking without login
-                ).permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().permitAll() // 🔥 ALLOW EVERYTHING
             );
 
         return http.build();

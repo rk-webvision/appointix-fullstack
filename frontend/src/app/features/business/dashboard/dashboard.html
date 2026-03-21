@@ -1,1 +1,19 @@
-<p>dashboard works!</p>
+<h2>Appointments</h2>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Service</th>
+  </tr>
+
+  <tr *ngFor="let a of appointments">
+    <td>{{ a.name }}</td>
+    <td>{{ a.phone }}</td>
+    <td>{{ a.date }}</td>
+    <td>{{ a.time }}</td>
+    <td>{{ a.service }}</td>
+  </tr>
+</table>

@@ -6,11 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppointmentService {
 
-  private apiUrl = 'http://localhost:8080/api/appointments';
+  private apiUrl = 'https://musical-xylophone-7gvvjrvqx59hwxq9-8080.app.github.dev/api/appointments';
 
   constructor(private http: HttpClient) {}
 
+  // ✅ POST (already used in booking form)
   createAppointment(data: any) {
     return this.http.post(this.apiUrl, data);
+  }
+
+  // 🔥 ADD THIS (GET API)
+  getAppointments() {
+    return this.http.get(this.apiUrl);
   }
 }
