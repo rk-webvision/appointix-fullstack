@@ -1,0 +1,40 @@
+.container {
+  width: 320px;
+  margin: 60px auto;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+
+      &:focus {
+        outline: none;
+        border-color: black;
+      }
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        background: #333;
+      }
+    }
+  }
+}
