@@ -1,19 +1,29 @@
-<h2>Appointments</h2>
+<div class="header">
+  <h2>Appointments</h2>
+  <button (click)="goToBooking()">+ New</button>
+</div>
 
-<table border="1" width="100%">
-  <tr>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>Date</th>
-    <th>Time</th>
-    <th>Service</th>
-  </tr>
+<div class="container">
 
-  <tr *ngFor="let a of appointments">
-    <td>{{ a.name }}</td>
-    <td>{{ a.phone }}</td>
-    <td>{{ a.date }}</td>
-    <td>{{ a.time }}</td>
-    <td>{{ a.service }}</td>
-  </tr>
-</table>
+  <div *ngIf="appointments.length === 0" class="empty">
+    No appointments yet 🚫
+  </div>
+
+  <div class="grid">
+    <div class="card" *ngFor="let a of appointments">
+      
+      <div class="card-header">
+        <h3>{{ a.name }}</h3>
+        <span class="service">{{ a.service }}</span>
+      </div>
+
+      <div class="card-body">
+        <p>📞 {{ a.phone }}</p>
+        <p>📅 {{ a.date }}</p>
+        <p>⏰ {{ a.time }}</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>

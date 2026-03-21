@@ -3,7 +3,7 @@ import { BookingForm } from './features/booking/booking-form/booking-form';
 import { Login } from './features/auth/login/login';
 
 export const routes: Routes = [
-  { path: '', component: BookingForm },
+  { path: 'booking', component: BookingForm },
   { path: 'login', component: Login },
   {
   path: 'dashboard',
