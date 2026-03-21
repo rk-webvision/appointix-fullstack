@@ -6,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppointmentService {
 
-  private apiUrl = '/api/appointments';
+  // private apiUrl = '/api/appointments';
+  private apiUrl = 'https://musical-xylophone-7gvvjrvqx59hwxq9-8080.app.github.dev/api/appointments'
 
   constructor(private http: HttpClient) {}
 
