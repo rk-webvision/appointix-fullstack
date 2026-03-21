@@ -1,17 +1,24 @@
 <div class="container">
   <h2>Book Appointment</h2>
 
-  <form>
-    <input type="text" placeholder="Your Name" />
+  <form (ngSubmit)="submit()">
 
-    <input type="text" placeholder="Phone Number" />
+    <input type="text" placeholder="Your Name"
+      [(ngModel)]="formData.name" name="name" />
 
-    <input type="date" />
+    <input type="text" placeholder="Phone Number"
+      [(ngModel)]="formData.phone" name="phone" />
 
-    <input type="time" />
+    <input type="date"
+      [(ngModel)]="formData.date" name="date" />
 
-    <input type="text" placeholder="Service (e.g. Haircut)" />
+    <input type="time"
+      [(ngModel)]="formData.time" name="time" />
+
+    <input type="text" placeholder="Service"
+      [(ngModel)]="formData.service" name="service" />
 
     <button type="submit">Book Appointment</button>
+
   </form>
 </div>
